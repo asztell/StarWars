@@ -144,7 +144,10 @@ $(document).ready(function() {
 
 	});
 
-	var $body = $("body"), i = 0, speed = 200;
+	var $body = $("body"), 
+		i = 0, 
+		timeoutSpeed = 400, 
+		intervalSpeed = 5000;
 	
 	window.setInterval(function() {
 
@@ -156,16 +159,16 @@ $(document).ready(function() {
 						'background-clip':'unset',
 						'background-attachment':'fixed',
 						'background-size':'2000px',
-						'background-position':'top center'});
-					// .fadeIn(speed);
+						'background-position':'top center'})
+					;
 				if(i === images.length) {
 					i = 0;
 				} else  {
 					i++;
 				}
 
-			}, speed);
+			}, timeoutSpeed);
 
-	}, 5000);
+	}, intervalSpeed);
 
 })

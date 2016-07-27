@@ -1,3 +1,12 @@
+html, body {
+	opacity: 1.0;
+	-webkit-transition: background 1.5s linear;
+	-moz-transition: background 1.5s linear;
+	-o-transition: background 1.5s linear;
+	-ms-transition: background 1.5s linear;
+	transition: background 1.5s linear;
+}
+
 html {
   position: relative;
   min-height: 100%;
