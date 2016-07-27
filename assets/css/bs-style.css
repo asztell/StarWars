@@ -14,8 +14,7 @@ html {
 
 body {
   margin-bottom: 60px;
-  background: url("../img/star_wars_fancy_planet.jpg")
-  no-repeat center top;
+  background: url("../img/star_wars_fancy_planet.jpg")  no-repeat center top;
   background-size: 2000px;
   background-color: unset; 
 }

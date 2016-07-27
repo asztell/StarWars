@@ -146,7 +146,7 @@ $(document).ready(function() {
 
 	var $body = $("body"), 
 		i = 0, 
-		timeoutSpeed = 400, 
+		timeoutSpeed = 200, 
 		intervalSpeed = 5000;
 	
 	window.setInterval(function() {
