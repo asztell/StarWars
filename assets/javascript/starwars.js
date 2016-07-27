@@ -1,12 +1,12 @@
 var images = new Array();
-	images[0] = 'url(../img/dying_stormtrooper.jpg) no-repeat center top';
-	images[1] = 'url(../img/inside_imperial.jpg) no-repeat center top';
-	images[2] = 'url(../img/star-wars-background-paintings-25.jpg)  no-repeat center top';
-	images[3] = 'url(../img/The_Heart_of_the_Empire.jpg) no-repeat center top';
-	images[4] = 'url(../img/x_wings.jpg) no-repeat center top';
-	images[5] = 'url(../img/tatooine.jpg) no-repeat center top';
-	images[6] = 'url(../img/swopening.jpg) no-repeat center top';
-	images[7] = 'url(../img/star_wars_fancy_planet.jpg) no-repeat center top';
+	images[0] = 'url(../assets/img/dying_stormtrooper.jpg)';
+	images[1] = 'url(../assets/img/inside_imperial.jpg)';
+	images[2] = 'url(../assets/img/star-wars-background-paintings-25.jpg)';
+	images[3] = 'url(../assets/img/The_Heart_of_the_Empire.jpg)';
+	images[4] = 'url(../assets/img/x_wings.jpg)';
+	images[5] = 'url(../assets/img/tatooine.jpg)';
+	images[6] = 'url(../assets/img/swopening.jpg)';
+	images[7] = 'url(../assets/img/star_wars_fancy_planet.jpg)';
 
 var attacker,
 	defender;
@@ -150,10 +150,14 @@ $(document).ready(function() {
 
 			window.setTimeout(function() {
 
-				$body.css({'background':images[i], 
+				$body.css({'background':images[i],
+						'background-repeat':'no-repeat', 
 						'background-color':'unset',
-						'background-size':'2000px'})
-					.fadeIn(speed);
+						'background-clip':'unset',
+						'background-attachment':'fixed',
+						'background-size':'2000px',
+						'background-position':'top center'});
+					// .fadeIn(speed);
 				if(i === images.length) {
 					i = 0;
 				} else  {
