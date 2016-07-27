@@ -1,3 +1,13 @@
+var images = new Array();
+	images[0] = 'url(../img/dying_stormtrooper.jpg) no-repeat center top';
+	images[1] = 'url(../img/inside_imperial.jpg) no-repeat center top';
+	images[2] = 'url(../img/star-wars-background-paintings-25.jpg)  no-repeat center top';
+	images[3] = 'url(../img/The_Heart_of_the_Empire.jpg) no-repeat center top';
+	images[4] = 'url(../img/x_wings.jpg) no-repeat center top';
+	images[5] = 'url(../img/tatooine.jpg) no-repeat center top';
+	images[6] = 'url(../img/swopening.jpg) no-repeat center top';
+	images[7] = 'url(../img/star_wars_fancy_planet.jpg) no-repeat center top';
+
 var attacker,
 	defender;
 
@@ -134,6 +144,24 @@ $(document).ready(function() {
 
 	});
 
+	var $body = $("body"), i = 0, speed = 200;
+	
+	window.setInterval(function() {
 
+			window.setTimeout(function() {
+
+				$body.css({'background':images[i], 
+						'background-color':'unset',
+						'background-size':'2000px'})
+					.fadeIn(speed);
+				if(i === images.length) {
+					i = 0;
+				} else  {
+					i++;
+				}
+
+			}, speed);
+
+	}, 5000);
 
 })
