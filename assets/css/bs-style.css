@@ -5,12 +5,19 @@ html {
 
 body {
   margin-bottom: 60px;
+  background: url(../img/star_wars_fancy_planet.jpg) 
+  no-repeat center top;
+  background-size: 2000px;
 }
 
 .panel,
 .panel-default {
-	background-color: #060606;
-	border-color: #060606;
+	/*background-color: #060606;*/
+	/*border-color: #060606;*/
+	border-color: transparent;
+	background: none;
+	box-shadow: none;
+	/*opacity: 0;*/
 }
 
 .page-header {
@@ -40,7 +47,7 @@ body {
 
 #attacker,
 #defender {
-	height: 180px;
+	/*height: 180px;*/
 }
 
 .footer {
