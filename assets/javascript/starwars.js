@@ -182,6 +182,8 @@ function attack_o() {
 		battles++;
 		in_battle = false;
 		defender_was_chosen = false;
+		attacker_h = undefined;
+		attacker_ap = undefined;
 		defender_id = '';
 		game_over = true;
 
