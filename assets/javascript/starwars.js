@@ -315,6 +315,14 @@ $(document).ready(function() {
 	$('#attack_div').on('click', '#reset_button', function() {
 
 		attacker_was_chosen = false;
+		attacker_h = undefined;
+		attacker_ap = undefined;
+		game_over = true;
+		players.a = undefined;
+		players.d = undefined;
+		battles = 0;
+		wins = 0;
+
 
 		$('#staging').html('<img id="regular" class="img img-rounded" src="assets/img/profile_regular.jpg"><img id="green" class="img img-rounded" src="assets/img/profile_green.jpg"><img id="blue" class="img img-rounded" src="assets/img/profile_blue.jpg"><img id="red" class="img img-rounded" src="assets/img/profile_red.jpg"><img id="inverted" class="img img-rounded" src="assets/img/profile_invert.jpg">');
 		$('#message').html('<h5>Choose your character!</h5>');
