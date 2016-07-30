@@ -1,12 +1,12 @@
 var images = new Array();
-	images[0] = 'url(../img/dying_stormtrooper.jpg)';
-	images[1] = 'url(../img/inside_imperial.jpg)';
-	images[2] = 'url(../img/star-wars-background-paintings-25.jpg)';
-	images[3] = 'url(../img/The_Heart_of_the_Empire.jpg)';
-	images[4] = 'url(../img/x_wings.jpg)';
-	images[5] = 'url(../img/tatooine.jpg)';
-	images[6] = 'url(../img/swopening.jpg)';
-	images[7] = 'url(../img/star_wars_fancy_planet.jpg)';
+	images[0] = 'url(../week-4-game/assets/img/dying_stormtrooper.jpg)';
+	images[1] = 'url(../week-4-game/assets/img/inside_imperial.jpg)';
+	images[2] = 'url(../week-4-game/assets/img/star-wars-background-paintings-25.jpg)';
+	images[3] = 'url(../week-4-game/assets/img/The_Heart_of_the_Empire.jpg)';
+	images[4] = 'url(../week-4-game/assets/img/x_wings.jpg)';
+	images[5] = 'url(../week-4-game/assets/img/tatooine.jpg)';
+	images[6] = 'url(../week-4-game/assets/img/swopening.jpg)';
+	images[7] = 'url(../week-4-game/assets/img/star_wars_fancy_planet.jpg)';
 
 
 var attacker_was_chosen = false,
