@@ -221,7 +221,7 @@ $(document).ready(function() {
 	$("#jquery_jplayer_1").jPlayer({
 		ready: function() {
 			$(this).jPlayer("setMedia", {
-			mp3: "../week-4-game/assets/audio/dof.mp3"
+			mp3: "../assets/audio/dof.mp3"
 			}).jPlayer("play");
 		
 			var click = document.ontouchstart === undefined ? 'click' : 'touchstart';
