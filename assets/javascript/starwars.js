@@ -1,12 +1,20 @@
 var images = new Array();
-	images[0] = 'url(../week-4-game/assets/img/dying_stormtrooper.jpg)';
-	images[1] = 'url(../week-4-game/assets/img/inside_imperial.jpg)';
-	images[2] = 'url(../week-4-game/assets/img/star-wars-background-paintings-25.jpg)';
-	images[3] = 'url(../week-4-game/assets/img/The_Heart_of_the_Empire.jpg)';
-	images[4] = 'url(../week-4-game/assets/img/x_wings.jpg)';
-	images[5] = 'url(../week-4-game/assets/img/tatooine.jpg)';
-	images[6] = 'url(../week-4-game/assets/img/swopening.jpg)';
-	images[7] = 'url(../week-4-game/assets/img/star_wars_fancy_planet.jpg)';
+	// images[0] = 'url(../week-4-game/assets/img/dying_stormtrooper.jpg)';
+	// images[1] = 'url(../week-4-game/assets/img/inside_imperial.jpg)';
+	// images[2] = 'url(../week-4-game/assets/img/star-wars-background-paintings-25.jpg)';
+	// images[3] = 'url(../week-4-game/assets/img/The_Heart_of_the_Empire.jpg)';
+	// images[4] = 'url(../week-4-game/assets/img/x_wings.jpg)';
+	// images[5] = 'url(../week-4-game/assets/img/tatooine.jpg)';
+	// images[6] = 'url(../week-4-game/assets/img/swopening.jpg)';
+	// images[7] = 'url(../week-4-game/assets/img/star_wars_fancy_planet.jpg)';
+	images[0] = 'url(../assets/img/dying_stormtrooper.jpg)';
+	images[1] = 'url(../assets/img/inside_imperial.jpg)';
+	images[2] = 'url(../assets/img/star-wars-background-paintings-25.jpg)';
+	images[3] = 'url(../assets/img/The_Heart_of_the_Empire.jpg)';
+	images[4] = 'url(../assets/img/x_wings.jpg)';
+	images[5] = 'url(../assets/img/tatooine.jpg)';
+	images[6] = 'url(../assets/img/swopening.jpg)';
+	images[7] = 'url(../assets/img/star_wars_fancy_planet.jpg)';
 
 
 var attacker_was_chosen = false,
@@ -337,7 +345,7 @@ $(document).ready(function() {
 	var $body = $("body"),
 		i = 0, 
 		timeoutSpeed = 200, 
-		intervalSpeed = 15000;
+		intervalSpeed = 5000;
 	
 	window.setInterval(function() {
 
