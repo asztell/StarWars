@@ -10,11 +10,11 @@ var images = new Array();
 	// images[8] = 'url(../week-4-game/assets/img/ATAT.jpg)';
 	images[0] = 'url(../assets/img/dying_stormtrooper.jpg)';
 	images[1] = 'url(../assets/img/inside_imperial.jpg)';
-	images[2] = 'url(../assets/img/star-wars-background-paintings-25.jpg)';
+	images[2] = 'url(../assets/img/mustafar.jpg)';
 	images[3] = 'url(../assets/img/The_Heart_of_the_Empire.jpg)';
 	images[4] = 'url(../assets/img/x_wings.jpg)';
 	images[5] = 'url(../assets/img/tatooine.jpg)';
-	images[6] = 'url(../assets/img/swopening.jpg)';
+	images[6] = 'url(../assets/img/coruscant.jpg)';
 	images[7] = 'url(../assets/img/star_wars_fancy_planet.jpg)';
 	images[8] = 'url(../assets/img/ATAT.jpg)';
 
