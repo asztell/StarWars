@@ -366,7 +366,7 @@ $(document).ready(function() {
 	var $body = $("body"),
 		i = 0, 
 		timeoutSpeed = 200, 
-		intervalSpeed = 5000;
+		intervalSpeed = 10000;
 	
 	window.setInterval(function() {
 
