@@ -91,7 +91,6 @@ function createPlayers() {
 		}
 	} else if(defender_id === 'regular'){
 		players.d = new Defender(5, 80, defender_name);
-		console.log("created regular defender");
 	}
 
 	if(attacker_id === 'green') {
@@ -102,7 +101,6 @@ function createPlayers() {
 		}
 	} else if(defender_id === 'green'){
 		players.d = new Defender(6, 90, defender_name);
-		console.log("created green defender");
 	}
 
 	if(attacker_id === 'blue') {
@@ -113,7 +111,6 @@ function createPlayers() {
 		}
 	} else if(defender_id === 'blue'){
 		players.d = new Defender(7, 100, defender_name);
-		console.log("created blue defender");
 	}
 
 	if(attacker_id === 'red') {
@@ -124,7 +121,6 @@ function createPlayers() {
 		}
 	} else if(defender_id === 'red'){
 		players.d = new Defender(8, 120,defender_name);
-		console.log("created red defender");
 	}
 
 	if(attacker_id === 'inverted') {
@@ -135,7 +131,6 @@ function createPlayers() {
 		}
 	} else if(defender_id === 'inverted'){
 		players.d = new Defender(10, 150, defender_name);
-		console.log("created inverted defender");
 	}
 
 }
