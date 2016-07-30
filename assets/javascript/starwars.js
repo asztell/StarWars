@@ -8,11 +8,51 @@ var images = new Array();
 	images[6] = 'url(../week-4-game/assets/img/swopening.jpg)';
 	images[7] = 'url(../week-4-game/assets/img/star_wars_fancy_planet.jpg)';
 
-var attacker,
-	defender;
+
+var attacker_was_chosen = false,
+	defender_was_chosen = false,
+	attacker_id = '',
+	defender_id = '',
+	attacker_h = undefined,
+	attacker_ap = undefined,
+	in_battle = false,
+	red,
+	blue,
+	green,
+	wins = 0,
+	battles = 0,
+	players = {
+		a: undefined,
+		d: undefined
+	},
+	game_over = false;
 
 
-function ForceUser(base, health) {
+
+function Attacker(current, base, health, name) {
+
+    this.attack = function(defender) {
+		defender.health -= this.strength.current;
+		// defender.defend(this);
+		this.strength.current += this.strength.increment;
+	};
+
+    this.defend = function(attacker) {
+		attacker.health -= this.strength.increment;
+	};
+	
+	this.name = 'Darth '+name;
+
+	this.health = health;
+	
+    this.strength = {
+		current : current,
+		increment : base
+	};
+}
+
+
+function Defender(base, health, name) {
 
     this.attack = function(defender) {
 		defender.health -= this.strength.current;
@@ -23,6 +63,8 @@ function ForceUser(base, health) {
     this.defend = function(attacker) {
 		attacker.health -= this.strength.increment;
 	};
+
+	this.name = 'Darth '+name;
 	
 	this.health = health;
 	
@@ -30,47 +72,145 @@ function ForceUser(base, health) {
 		current : base,
 		increment : base
 	};
-	
-	this.attacker = undefined;
 }
 
 
-function createPlayer(jedi_id, is_attacker) {
-	if(jedi_id === 'red') {
-		if(is_attacker === true) {
-			attacker = new ForceUser(7, 100);
-			console.log("created red attacker");
+function createPlayers() {
+
+	var attacker_initial = attacker_id.charAt(0).toUpperCase();
+	var attacker_name = attacker_initial+attacker_id.slice(1, attacker_id.length);
+	var defender_initial = defender_id.charAt(0).toUpperCase();
+	var defender_name = defender_initial+defender_id.slice(1, defender_id.length);
+
+
+	if(attacker_id === 'regular') {
+		if(battles <= 0) {
+			players.a = new Attacker(5, 5, 80, attacker_name);
 		} else {
-			defender = new ForceUser(7, 100);
-			console.log("created red defender");
+			players.a = new Attacker(attacker_ap, 5, attacker_h, attacker_name);
 		}
+	} else if(defender_id === 'regular'){
+		players.d = new Defender(5, 80, defender_name);
+		console.log("created regular defender");
 	}
-	if(jedi_id === 'blue') {
-		if(is_attacker === true) {
-			attacker = new ForceUser(6, 90);
-			console.log("created blue attacker");
+
+	if(attacker_id === 'green') {
+		if(battles <= 0) {
+			players.a = new Attacker(6, 6, 90, attacker_name);
 		} else {
-			defender = new ForceUser(6, 90);
-			console.log("created blue defender");
+			players.a = new Attacker(attacker_ap, 6, attacker_h, attacker_name);
 		}
+	} else if(defender_id === 'green'){
+		players.d = new Defender(6, 90, defender_name);
+		console.log("created green defender");
 	}
-	if(jedi_id === 'green') {
-		if(is_attacker === true) {
-			attacker = new ForceUser(5, 80);
-			console.log("created green attacker");
+
+	if(attacker_id === 'blue') {
+		if(battles <= 0) {
+			players.a = new Attacker(7, 7, 100, attacker_name);
 		} else {
-			defender = new ForceUser(5, 80);
-			console.log("created green defender");
+			players.a = new Attacker(attacker_ap, 7, attacker_h, attacker_name);
 		}
+	} else if(defender_id === 'blue'){
+		players.d = new Defender(7, 100, defender_name);
+		console.log("created blue defender");
 	}
+
+	if(attacker_id === 'red') {
+		if(battles <= 0) {
+			players.a = new Attacker(8, 8, 120, attacker_name);
+		} else {
+			players.a = new Attacker(attacker_ap, 8, attacker_h, attacker_name);
+		}
+	} else if(defender_id === 'red'){
+		players.d = new Defender(8, 120,defender_name);
+		console.log("created red defender");
+	}
+
+	if(attacker_id === 'inverted') {
+		if(battles <= 0) {
+			players.a = new Attacker(10, 10, 150, attacker_name);
+		} else {
+			players.a = new Attacker(attacker_ap, 10, attacker_h, attacker_name);
+		}
+	} else if(defender_id === 'inverted'){
+		players.d = new Defender(10, 150, defender_name);
+		console.log("created inverted defender");
+	}
+
 }
+
+
+
+function attack_o() {
+
+	players.a.attack(players.d);
+
+	if(players.a.health > 0
+	&& players.d.health > 0) {
+
+		players.d.defend(players.a);
+
+	} else if(players.d.health <= 0
+		&& players.a.health > 0) {
+
+		$('#message > h5').html('You won!!!  Choose your next opponent!');
+		$('#attack_div').html('<h6></h6>');
+		$('#defender > .img').appendTo($('#defeated'));
+
+		wins++;
+		battles++;
+		in_battle = false;
+		defender_was_chosen = false;
+		defender_id = '';
+		attacker_h = players.a.health;
+		attacker_ap = players.a.strength.current;
+
+		if(!$('#staging').is(':parent')) {
+			$('#attack_div').html('<p><a href="#" id="reset_button" class="btn btn-primary" role="button">Reset</a></p>');
+		}
+
+	}
+
+	if(players.a.health <= 0
+		&& players.d.health > 0) {
+
+		$('#message > h5').html('You lost...  Press "Reset" to restart game');
+		$('#attack_div').html('<h6></h6>');
+		$('#defender > .img').appendTo($('#undefeated'));
+
+		battles++;
+		in_battle = false;
+		defender_was_chosen = false;
+		defender_id = '';
+		game_over = true;
+
+		$('#attack_div').html('<p><a href="#" id="reset_button" class="btn btn-primary" role="button">Reset</a></p>');
+
+	}
+
+	stats();
+
+}
+
+
+
+function stats() {
+
+	$('#attacker_stats > #name').html(players.a.name);
+	$('#attacker_stats > #health').html('health: '+players.a.health);
+	$('#attacker_stats > #attack_power').html('strength: '+players.a.strength.current);
+	$('#attacker_stats > #wins').html('wins: '+wins+' / '+battles+' battles');
+	$('#defender_stats > #name').html(players.d.name);
+	$('#defender_stats > #health').html('health: '+players.d.health);
+	$('#defender_stats > #attack_power').html('strength: '+players.d.strength.current);
+
+}
+
 
 
 $(document).ready(function() {
 
-	var attacker_was_chosen = false,
-		defender_was_chosen = false,
-		jedi = {id:'',is_attacker:undefined};
 
 	$('#staging').on('click', '.img', function() {
 
@@ -84,16 +224,16 @@ $(document).ready(function() {
 					.show('slow');
 
 			$('#message > h5').html('Choose your opponent!');
+			$('#defender_stats > #health').html('<h5></h5>');
+			$('#defender_stats > #attack_power').html('<h5></h5>');
+
 			
 			attacker_was_chosen = true;
-			jedi.id = $(this).attr('id');
-			jedi.is_attacker = true;
-
-			// createPlayer(jedi.id, jedi.is_attacker);
+			attacker_id = $(this).attr('id');
 
 		} else if(attacker_was_chosen === true
 		&& defender_was_chosen !== true
-		&& $(this).attr('id') !== jedi.id) {
+		&& $(this).attr('id') !== attacker.id) {
 			
 			var $defender = $('#defender');
 
@@ -101,14 +241,14 @@ $(document).ready(function() {
 					.appendTo($defender)
 					.show('slow');
 
-			$('#message > h5').html('Click attack!');
-			// $('#attack_div').html('<><>');
+			$('#message > h5').html('Click to Start!');
+			$('#attack_div').html('<p><a href="#" id="start_button" class="btn btn-primary" role="button">Start</a></p>');
+			$('#defender_stats > #name').html('<h5></h5>');
+			$('#defender_stats > #health').html('<h5></h5>');
+			$('#defender_stats > #attack_power').html('<h5></h5>');
 
 			defender_was_chosen = true;
-			jedi.id = $(this).attr('id');
-			jedi.is_attacker = false;
-
-			// createPlayer(jedi.id, jedi.is_attacker);
+			defender_id = $(this).attr('id');
 
 		}
 
@@ -116,51 +256,98 @@ $(document).ready(function() {
 
 	$('#attacker').on('click', '.img', function() {
 
-		if(attacker_was_chosen === true) {
+		if(attacker_was_chosen === true
+		&& in_battle !== true
+		&& battles <= 0
+		&& game_over === false) {
 
 			$(this).css({"display":"none"})
 					.appendTo($('#staging'))
 					.show('slow');
 
 			$('#message > h5').html('Choose your character!');
+			$('#attack_div').html('<h6></h6>');
 
 			attacker_was_chosen = false;
+			attacker_id = '';
+
 		}
 
 	});
 
 	$('#defender').on('click', '.img', function() {
 
-		if(defender_was_chosen === true) {
+		if(defender_was_chosen === true
+		&& in_battle !== true) {
 
 			$(this).css({"display":"none"})
 					.appendTo($('#staging'))
 					.show('slow');
 
 			$('#message > h5').html('Choose your opponent!');
+			$('#attack_div').html('<h6></h6>');
 
 			defender_was_chosen = false;
+			defender_id = '';
+
 		}
 
 	});
 
-	var $body = $("body"), 
+	$('#attack_div').on('click', '#start_button', function() {
+		
+		createPlayers();
+
+		$('#attack_div').html('<p><a href="#" id="attack_button" class="btn btn-success" role="button">ATTACK!</a></p>');
+
+		stats();
+
+		in_battle = true;
+
+	});
+
+	$('#attack_div').on('click', '#attack_button', function() {
+
+		attack_o();
+
+	});
+
+	$('#attack_div').on('click', '#reset_button', function() {
+
+		attacker_was_chosen = false;
+
+		$('#staging').html('<img id="regular" class="img img-rounded" src="assets/img/profile_regular.jpg"><img id="green" class="img img-rounded" src="assets/img/profile_green.jpg"><img id="blue" class="img img-rounded" src="assets/img/profile_blue.jpg"><img id="red" class="img img-rounded" src="assets/img/profile_red.jpg"><img id="inverted" class="img img-rounded" src="assets/img/profile_invert.jpg">');
+		$('#message').html('<h5>Choose your character!</h5>');
+		$('#attacker').html('');
+		$('#attack_div').html('');
+		$('.attacker_stats').html('');
+		$('.defender_stats').html('');
+		$('#defeated').html('');
+		$('#undefeated').html('');
+
+	});
+
+
+
+	var $body = $("body"),
 		i = 0, 
 		timeoutSpeed = 200, 
-		intervalSpeed = 5000;
+		intervalSpeed = 15000;
 	
 	window.setInterval(function() {
 
 			window.setTimeout(function() {
 
-				$body.css({'background':images[i],
+				$body.css({
+						'background':images[i],
 						'background-repeat':'no-repeat', 
 						'background-color':'unset',
 						'background-clip':'unset',
 						'background-attachment':'fixed',
 						'background-size':'2000px',
-						'background-position':'top center'})
-					;
+						'background-position':'top center'
+					});
+
 				if(i === images.length) {
 					i = 0;
 				} else  {

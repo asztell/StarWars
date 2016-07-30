@@ -4,12 +4,9 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="assets/css/cyborg-bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="assets/css/bs-style.css">
-	<title>Estar Guars</title>
+	<title>Estar Guarz</title>
 </head>
 <body>
-	<div id="wrapper">
-		
-	</div>
 	<div class="container">
 		<div class="page-header text-center">
 			<h4 id="title">Estar Guarz</h4>
@@ -19,9 +16,11 @@
 		<div class="row">
 			<div class="panel panel-default">
 				<div id="staging" class="pic_holder col-lg-10 col-md-10 col-sm-10 col-xs-10">
-					<img id="red" class="img img-rounded" src="assets/img/profile_red.jpg">
+					<img id="regular" class="img img-rounded" src="assets/img/profile_regular.jpg">
 					<img id="green" class="img img-rounded" src="assets/img/profile_green.jpg">
 					<img id="blue" class="img img-rounded" src="assets/img/profile_blue.jpg">
+					<img id="red" class="img img-rounded" src="assets/img/profile_red.jpg">
+					<img id="inverted" class="img img-rounded" src="assets/img/profile_invert.jpg">
 				</div>
 			</div>
 		</div>
@@ -31,19 +30,52 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="panel panel-default  col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1">
+			<div class="panel panel-default col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1">
 				<div id="attacker" class="pic_holder">
 				</div>
 			</div>
-			<div class="panel panel-default col-lg-4 col-md-4 col-sm-4 col-xs-4">
+			<div class="panel panel-default col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
 				<div id="attack_div">
-					<h6>bla</h6>
+					<!-- <h6></h6> -->
 				</div>
 			</div>
-			<div class="panel panel-default  col-lg-3 col-md-3 col-sm-3 col-xs-3">
+			<div class="panel panel-default col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1">
 				<div id="defender" class="pic_holder">
 				</div>
 			</div>
+		</div>
+		<div class="row">
+			<div class="panel panel-default col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				<div id="attacker_stats" class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1">
+					<h5 id="name" class="attacker_stats col-lg-12 col-md-12 col-sm-12 col-xs-12"></h5>
+					<h5 id="health" class="attacker_stats col-lg-12 col-md-12 col-sm-12 col-xs-12"></h5>
+					<h5 id="attack_power" class="attacker_stats col-lg-12 col-md-12 col-sm-12 col-xs-12"></h5>
+					<h5 id="wins" class="attacker_stats col-lg-12 col-md-12 col-sm-12 col-xs-12"></h5>
+				</div>
+				<div class="panel panel-default col-lg-2 col-lg-offset-1 col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1 col-xs-2 col-xs-offset-1">
+				</div>
+				<div id="defender_stats" class="col-lg-3 col-lg-offset-1 col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-xs-3 col-xs-offset-1">
+					<h5 id="name" class="defender_stats col-lg-12 col-md-12 col-sm-12 col-xs-12"></h5>
+					<h5 id="health" class="defender_stats col-lg-12 col-md-12 col-sm-12 col-xs-12"></h5>
+					<h5 id="attack_power" class="defender_stats col-lg-12 col-md-12 col-sm-12 col-xs-12"></h5>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div id="defeated" class="panel panel-default col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
+				
+			</div>
+			<div id="undefeated" class="panel panel-default col-lg-4 col-lg-offset-3 col-md-4 col-md-offset-3 col-sm-4 col-sm-offset-3 col-xs-4 col-xs-offset-3">
+				
+			</div>
+		</div>
+		<div class="row">
+			<h4 class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-4 col-sm-offset-1 col-xs-4 col-xs-offset-1">
+				Defeated
+			</h4>
+			<h4 class="col-lg-4 col-lg-offset-3 col-md-4 col-md-offset-3 col-sm-4 col-sm-offset-3 col-xs-4 col-xs-offset-3">
+				Undefeated
+			</h4>
 		</div>
 	</div>
 	<div class="footer">

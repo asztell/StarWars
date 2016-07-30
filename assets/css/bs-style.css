@@ -34,7 +34,14 @@ body {
 	border-bottom: 0;
 }
 
-#staging img {
+a {
+	float: none;
+	margin: 5%;
+}
+
+#staging img,
+#defeated img,
+#undefeated img {
 	opacity: .5;
 	height: 80px;
 }
