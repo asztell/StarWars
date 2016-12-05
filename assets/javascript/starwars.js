@@ -1,22 +1,22 @@
 var images = new Array();
-	images[0] = 'url(../week-4-game/assets/img/dying_stormtrooper.jpg)';
-	images[1] = 'url(../week-4-game/assets/img/inside_imperial.jpg)';
-	images[2] = 'url(../week-4-game/assets/img/mustafar.jpg)';
-	images[3] = 'url(../week-4-game/assets/img/The_Heart_of_the_Empire.jpg)';
-	images[4] = 'url(../week-4-game/assets/img/x_wings.jpg)';
-	images[5] = 'url(../week-4-game/assets/img/tatooine.jpg)';
-	images[6] = 'url(../week-4-game/assets/img/coruscant.jpg)';
-	images[7] = 'url(../week-4-game/assets/img/star_wars_fancy_planet.jpg)';
-	images[8] = 'url(../week-4-game/assets/img/ATAT.jpg)';
-	// images[0] = 'url(../assets/img/dying_stormtrooper.jpg)';
-	// images[1] = 'url(../assets/img/inside_imperial.jpg)';
-	// images[2] = 'url(../assets/img/mustafar.jpg)';
-	// images[3] = 'url(../assets/img/The_Heart_of_the_Empire.jpg)';
-	// images[4] = 'url(../assets/img/x_wings.jpg)';
-	// images[5] = 'url(../assets/img/tatooine.jpg)';
-	// images[6] = 'url(../assets/img/coruscant.jpg)';
-	// images[7] = 'url(../assets/img/star_wars_fancy_planet.jpg)';
-	// images[8] = 'url(../assets/img/ATAT.jpg)';
+	// images[0] = 'url(../week-4-game/assets/img/dying_stormtrooper.jpg)';
+	// images[1] = 'url(../week-4-game/assets/img/inside_imperial.jpg)';
+	// images[2] = 'url(../week-4-game/assets/img/mustafar.jpg)';
+	// images[3] = 'url(../week-4-game/assets/img/The_Heart_of_the_Empire.jpg)';
+	// images[4] = 'url(../week-4-game/assets/img/x_wings.jpg)';
+	// images[5] = 'url(../week-4-game/assets/img/tatooine.jpg)';
+	// images[6] = 'url(../week-4-game/assets/img/coruscant.jpg)';
+	// images[7] = 'url(../week-4-game/assets/img/star_wars_fancy_planet.jpg)';
+	// images[8] = 'url(../week-4-game/assets/img/ATAT.jpg)';
+	images[0] = 'url(../assets/img/dying_stormtrooper.jpg)';
+	images[1] = 'url(../assets/img/inside_imperial.jpg)';
+	images[2] = 'url(../assets/img/mustafar.jpg)';
+	images[3] = 'url(../assets/img/The_Heart_of_the_Empire.jpg)';
+	images[4] = 'url(../assets/img/x_wings.jpg)';
+	images[5] = 'url(../assets/img/tatooine.jpg)';
+	images[6] = 'url(../assets/img/coruscant.jpg)';
+	images[7] = 'url(../assets/img/star_wars_fancy_planet.jpg)';
+	images[8] = 'url(../assets/img/ATAT.jpg)';
 
 
 var attacker_was_chosen = false,
@@ -219,16 +219,22 @@ function stats() {
 $(document).ready(function() {
 
 	$("#jquery_jplayer_1").jPlayer({
+		
 		ready: function() {
+			
 			$(this).jPlayer("setMedia", {
-			mp3: "../week-4-game/assets/audio/dof.mp3"
+			
+				mp3: "../week-4-game/assets/audio/dof.mp3"
+			
 			}).jPlayer("play");
 		
 			var click = document.ontouchstart === undefined ? 'click' : 'touchstart';
+			
 			var kickoff = function () {
-			$("#jquery_jplayer_1").jPlayer("play");
-			document.documentElement.removeEventListener(click, kickoff, true);
+				$("#jquery_jplayer_1").jPlayer("play");
+				document.documentElement.removeEventListener(click, kickoff, true);
 			};
+			
 			document.documentElement.addEventListener(click, kickoff, true);
 		},
 
