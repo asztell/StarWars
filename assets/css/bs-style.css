@@ -82,12 +82,12 @@ body > .container {
   /*padding-top: 60px;*/
 }
 
-#preload-01 { background: url(https://asztell.github.io/StarWars/assets/img/ATAT.jpg) no-repeat -9999px -9999px; }
-#preload-02 { background: url(https://asztell.github.io/StarWars/assets/img/inside_imperial.jpg) no-repeat -9999px -9999px; }
-#preload-03 { background: url(https://asztell.github.io/StarWars/assets/img/mustafar.jpg) no-repeat -9999px -9999px; }
-#preload-04 { background: url(https://asztell.github.io/StarWars/assets/img/The_Heart_of_the_Empire.jpg) no-repeat -9999px -9999px; }
-#preload-05 { background: url(https://asztell.github.io/StarWars/assets/img/x_wings.jpg) no-repeat -9999px -9999px; }
-#preload-06 { background: url(https://asztell.github.io/StarWars/assets/img/tatooine.jpg) no-repeat -9999px -9999px; }
-#preload-07 { background: url(https://asztell.github.io/StarWars/assets/img/coruscant.jpg) no-repeat -9999px -9999px; }
-#preload-08 { background: url(https://asztell.github.io/StarWars/assets/img/star_wars_fancy_planet.jpg) no-repeat -9999px -9999px; }
-#preload-09 { background: url(https://asztell.github.io/StarWars/assets/img/ATAT.jpg) no-repeat -9999px -9999px; }
+#preload-01 { background: url('https://asztell.github.io/StarWars/assets/img/ATAT.jpg') no-repeat -9999px -9999px; }
+#preload-02 { background: url('https://asztell.github.io/StarWars/assets/img/inside_imperial.jpg') no-repeat -9999px -9999px; }
+#preload-03 { background: url('https://asztell.github.io/StarWars/assets/img/mustafar.jpg') no-repeat -9999px -9999px; }
+#preload-04 { background: url('https://asztell.github.io/StarWars/assets/img/The_Heart_of_the_Empire.jpg') no-repeat -9999px -9999px; }
+#preload-05 { background: url('https://asztell.github.io/StarWars/assets/img/x_wings.jpg') no-repeat -9999px -9999px; }
+#preload-06 { background: url('https://asztell.github.io/StarWars/assets/img/tatooine.jpg') no-repeat -9999px -9999px; }
+#preload-07 { background: url('https://asztell.github.io/StarWars/assets/img/coruscant.jpg') no-repeat -9999px -9999px; }
+#preload-08 { background: url('https://asztell.github.io/StarWars/assets/img/star_wars_fancy_planet.jpg') no-repeat -9999px -9999px; }
+#preload-09 { background: url('https://asztell.github.io/StarWars/assets/img/ATAT.jpg') no-repeat -9999px -9999px; }
