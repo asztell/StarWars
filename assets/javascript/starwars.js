@@ -397,11 +397,6 @@ $(document).ready(function() {
 				});
 
 				i === images.length ? i = 0 : i++
-				// if(i === images.length) {
-				// 	i = 0;
-				// } else  {
-				// 	i++;
-				// }
 
 			}, timeoutSpeed);
 
