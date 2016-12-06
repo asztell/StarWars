@@ -396,12 +396,12 @@ $(document).ready(function() {
 					'background-position':'top center'
 				});
 
-				(i === images.length) ? i = 0; : i++;
-				// if(i === images.length) {
-				// 	i = 0;
-				// } else  {
-				// 	i++;
-				// }
+				// (i === images.length) ? i = 0; : i++;
+				if(i === images.length) {
+					i = 0;
+				} else  {
+					i++;
+				}
 
 			}, timeoutSpeed);
 
