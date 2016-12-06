@@ -17,7 +17,8 @@ body {
   background: url("../img/star_wars_fancy_planet.jpg")  no-repeat center top;
   background-size: 2000px;
   background-color: unset; 
-  transition:  background-image 1.3s ease-in-out;
+  -webkit-transition:  background-image 1.3s ease-in-out;
+  -moz-transition:  background-image 1.3s ease-in-out;
 }
 
 .panel,
