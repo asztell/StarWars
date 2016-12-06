@@ -387,20 +387,21 @@ $(document).ready(function() {
 			window.setTimeout(function() {
 
 				$body.css({
-						'background':images[i],
-						'background-repeat':'no-repeat', 
-						'background-color':'unset',
-						'background-clip':'unset',
-						'background-attachment':'fixed',
-						'background-size':'2000px',
-						'background-position':'top center'
-					});
+					'background':images[i],
+					'background-repeat':'no-repeat', 
+					'background-color':'unset',
+					'background-clip':'unset',
+					'background-attachment':'fixed',
+					'background-size':'2000px',
+					'background-position':'top center'
+				});
 
-				if(i === images.length) {
-					i = 0;
-				} else  {
-					i++;
-				}
+				(i === images.length) ? i = 0; : i++;
+				// if(i === images.length) {
+				// 	i = 0;
+				// } else  {
+				// 	i++;
+				// }
 
 			}, timeoutSpeed);
 
